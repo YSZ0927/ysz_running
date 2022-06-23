@@ -28,14 +28,6 @@ class _ReduxAppState extends State<Home> with NavigatorObserver {
       'Index 1: Business',
       style: optionStyle,
     ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: Settings',
-      style: optionStyle,
-    ),
   ];
 
   void _onItemTapped(int index) {
@@ -47,30 +39,30 @@ class _ReduxAppState extends State<Home> with NavigatorObserver {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          //导航栏
+          title: Text("App Name"),
+          actions: <Widget>[
+            //导航栏右侧菜单
+            IconButton(icon: Icon(Icons.share), onPressed: () {}),
+          ],
+        ),
         body: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
+          child: Container(
+            child: _widgetOptions.elementAt(_selectedIndex),
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'Home',
+              label: 'Active',
               backgroundColor: Colors.red,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.business),
-              label: 'Business',
+              label: 'Users',
               backgroundColor: Colors.green,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'School',
-              backgroundColor: Colors.purple,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-              backgroundColor: Colors.pink,
             ),
           ],
           currentIndex: _selectedIndex,
