@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:amap_flutter_location/amap_flutter_location.dart';
 import 'package:amap_flutter_location/amap_location_option.dart';
@@ -73,8 +71,7 @@ class _StartRunningState extends State<StartRunning> {
               ],
               radius: 0.7,
               stops: stops2), // this list must have the same length as colors.
-        ),
-        child: FloatingActionButton());
+        ));
     return Stack(
       children: [
         currentLocation == null
